@@ -1,0 +1,41 @@
+<h1>Organize your CD collections</h1>
+
+#if($CDList)
+  <ul>
+    #foreach ($cd in $CDList)
+    <li>$cd.getTitle()</li>
+    <li>$cd.getArtist()</li>
+    <li>$cd.getGenre()</li>
+    <li>$cd.getYear()</li>
+    <br>
+    #end
+  </ul>
+#else
+  <h4>get more music!</h4>
+#end
+
+
+
+
+<h3>Please enter the CD informations</h3>
+
+<form class="jumbotron" action="/CD" method="post">
+  <div class="form-group">
+    <label for="genre">Please enter genre</label>
+    <input id="genre" type="text" name="genre" value="">
+  </div>
+  <div class="form-group">
+    <label for="artist">Please enter artist</label>
+    <input id="artist" type="text" name="artist" value="">
+  </div>
+  <div class="form-group">
+    <label for="title">Please enter title</label>
+    <input id="title" type="text" name="title" value="">
+  </div>
+  <div class="form-group">
+    <label for="year">Please enter year</label>
+    <input id="year" type="text" name="year" value="">
+  </div>
+
+  <button type="submit" class="btn">Store Your Music</button>
+</form>
